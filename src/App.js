@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Timer from './components/Timer';
 import { useState } from 'react';
+import Timer2 from './components/Timer2';
 
 
 
@@ -20,9 +21,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
+        {/* 
         {showTimer ? <Timer /> : <div>No timer</div>}
         <button onClick={() => { setShowTimer(false) }}>Hide</button>
+ */}
+        <Timer2 />
 
         <a
           className="App-link"

@@ -6,15 +6,16 @@ class Timer extends React.Component {
         this.state = {
             time: 0
         }
-        setInterval(() => {
-            this.incrementTimer()
-        }, 1000)
 
         console.log("Constructor called")
     }
 
     componentDidMount() {
         console.log("Component created")
+
+        setInterval(() => {
+            this.incrementTimer()
+        }, 1000)
     }
 
     componentWillUnmount() {
@@ -35,7 +36,7 @@ class Timer extends React.Component {
         console.log("Render done")
         return (
             <>
-                <div>
+                <div className={this.state.time >= 5 ? "blue" : ""}>
                     {this.state.time}
                 </div>
                 <button onClick={() => { this.incrementTimer() }}>Click me</button>

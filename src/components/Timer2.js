@@ -1,6 +1,6 @@
 //rfc
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Timer2() {
     function incrementTimer() {
@@ -10,6 +10,21 @@ export default function Timer2() {
     }
 
     const [time, setTime] = useState(0)
+
+    useEffect(() => {
+        // console.log("useEffect called")
+
+        console.log("New interval set")
+
+        const intervalId = setInterval(() => {
+            incrementTimer()
+        }, 1000)
+
+        return () => {
+            clearInterval(intervalId)
+        }
+
+    })
 
     return (
         <>
